@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: hugg_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: hugg_admin
+      POSTGRES_PASSWORD: hugg_secure_password
+      POSTGRES_DB: hugg_business
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: hugg_backend
+    restart: always
+    environment:
+      DATABASE_URL: postgresql://hugg_admin:hugg_secure_password@db:5432/hugg_business
+      PORT: 8000
+      AI_SCAN_INTERVAL_MINUTES: 15
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: hugg_frontend
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:

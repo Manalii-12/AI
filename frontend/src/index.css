@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --pure-white: #FFFFFF;
+    --main-bg: #F4F8F5;
+    --mint: #DCEFE3;
+    --sage: #83B89A;
+    --primary-green: #347A59;
+    --deep-green: #244B39;
+    --border-sage: #E5ECE7;
+    --body-text: #111827;
+  }
+
+  body {
+    background-color: #F4F8F5; /* Soft Sage / Very Light Background */
+    color: #111827; /* Solid high-contrast black body text */
+    min-height: 100vh;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #111827; /* High-contrast black headings */
+    font-weight: 700;
+  }
+
+  input, textarea, select {
+    color: #111827;
+    background-color: #FFFFFF;
+    border-color: #E5ECE7;
+  }
+
+  input::placeholder, textarea::placeholder {
+    color: #6B7280;
+  }
+}
+
+/* Custom Fresh Sage Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F4F8F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #B8DFCA;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #83B89A;
+}
+
+/* Fresh Sage & White Card Surface */
+.glass-card {
+  background: #FFFFFF;
+  border: 1px solid #E5ECE7;
+  box-shadow: 0 2px 12px -1px rgba(36, 75, 57, 0.04), 0 1px 3px -1px rgba(36, 75, 57, 0.02);
+}
+
+.glass-card-hover {
+  transition: all 0.2s ease-in-out;
+}
+.glass-card-hover:hover {
+  border-color: #83B89A;
+  box-shadow: 0 8px 20px -3px rgba(36, 75, 57, 0.07), 0 3px 6px -1px rgba(36, 75, 57, 0.03);
+  transform: translateY(-1px);
+}
+
+/* Table Styling */
+table thead th {
+  background-color: #F4F8F5 !important;
+  color: #111827 !important;
+  border-color: #E5ECE7 !important;
+  font-weight: 700;
+}
+
+table tbody tr {
+  border-color: #E5ECE7 !important;
+}
+
+table tbody tr:hover {
+  background-color: #F4F8F5 !important;
+}
+
+/* Ensure text on cards is sharp and high-contrast */
+.text-white:not(button):not(button *):not([class*="bg-emerald-600"]):not([class*="bg-emerald-500"]):not([class*="bg-rose-500"]):not([class*="bg-rose-600"]):not([class*="bg-blue-600"]):not([class*="bg-purple-600"]):not([class*="bg-green-600"]):not([class*="bg-[#347A59]"]):not([class*="bg-[#244B39]"]):not(.badge):not(.badge *):not([class*="bg-slate-900"]):not([class*="bg-slate-950"]) {
+  color: #111827 !important;
+}
+
+/* Text selections */
+::selection {
+  background-color: #DCEFE3;
+  color: #244B39;
+}
