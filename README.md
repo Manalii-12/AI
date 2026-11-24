@@ -413,19 +413,6 @@ AI huggs/
 
 ---
 
-## 👥 Demo User Roles & Role-Based Permissions
-
-Switch roles from the top navigation bar to test role-specific workflows:
-
-| User | Role | Operational Capabilities |
-| :--- | :--- | :--- |
-| **Aarav Mehta** | **Owner / Admin** | Complete access, 1-click AI approvals, financial ledger, pre-dispatch execution, scenario simulation. |
-| **Sarah Jenkins** | **Operations Manager** | Order lifecycle pipeline, courier SLA escalation, carrier re-routing, quality management. |
-| **Dev Patel** | **Inventory Manager** | Stock adjustments, purchase order creation, inbound warehouse receiving. |
-| **Maya Lin** | **Sales Employee** | Customer order creation, account balances, product catalog lookup. |
-| **Rohan Verma** | **Customer Support** | Customer complaint ticketing, AI resolution execution, delivery tracking. |
 
 ---
 
-## 📜 License & Copyright
-Developed for **Hugg Beverages AI Operations & Decision Intelligence Platform**. All rights reserved.
